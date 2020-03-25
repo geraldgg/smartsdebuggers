@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+   <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" MenuName="Add to Image Watch"/>
+
+   <Type Name="UtilsImg">
+      <AlternativeType Name="UtilsImg*"/>
+      <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+   </Type>
+
+   <Type Name="UtilsImg">
+      <AlternativeType Name="UtilsImg*"/>
+      <DisplayString>
+         {{{nc} x {nl}, {resol} dpi}} 
+      </DisplayString>
+      <Expand>
+        <Synthetic Name="[type]">
+         <DisplayString>UINT8</DisplayString>
+        </Synthetic>
+        <Synthetic Name="[channels]" Condition='cmat!=0'>
+         <DisplayString>RGB</DisplayString>
+        </Synthetic>
+        <Item Name="[planes]" Condition='cmat!=0'>3</Item>
+
+        <Item Name="[channels]" Condition='cmat==0'>1</Item>
+        <Item Name="[planes]" Condition='cmat==0'>1</Item>
+
+        <Item Name="[width]">nc</Item>
+        <Item Name="[height]">nl</Item>
+        <Item Name="[data]" Condition='cmat!=0'>cmat</Item>
+		<Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat!=0'>gmat</Item>
+		<Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat==0'>mat</Item>
+        <Item Name="[stride]">nc</Item>
+      </Expand>
+   </Type>
+   
+</AutoVisualizer>
