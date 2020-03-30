@@ -10,5 +10,69 @@
       </DisplayString>
    </Type>
    
+   <Type Name="_UtilsSegm_results">
+    <DisplayString>{{ n_opt={n_opt} }}</DisplayString>
+    <Expand>  
+        <Item Name="[size]">n_opt</Item>  
+        <Item Name="[opt_prob]">opt_prob</Item>  
+        <ArrayItems>  
+            <Size>n_opt</Size>  
+            <ValuePointer>opt_prob</ValuePointer>  
+        </ArrayItems>  
+        <Item Name="[obj_nmb]">obj_nmb</Item>  
+        <ArrayItems>  
+            <Size>n_opt</Size>  
+            <ValuePointer>obj_nmb</ValuePointer>  
+        </ArrayItems>  
+    </Expand>  
+   </Type>
+   
+   <Type Name="UtilsList">
+    <DisplayString>{{ n_var={n_var}, score={score}, field={field[0]} }}</DisplayString>
+    <Expand>
+      <Item Name="n_var">n_var</Item>  
+      <Item Name="score">score</Item>
+      <Synthetic Name="field"> <!-- prob is a pointer to an array, of size n_var -->
+        <DisplayString>[{n_var}] {field}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_var</Size>  
+            <ValuePointer>field</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+      <Synthetic Name="prob"> <!-- prob is a pointer to an array, of size n_var -->
+        <DisplayString>[{n_var}] {prob}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_var</Size>
+            <ValuePointer>prob</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+      <Item Name="idx">idx</Item>  
+<!--      <Synthetic Name="idx">
+        <DisplayString>[{n_var}] {idx}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_var</Size>  
+            <ValuePointer>idx</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic> -->
+      <Item Name="nb_words">nb_words</Item>  
+<!--      <Synthetic Name="word_idx">
+        <DisplayString>[{nb_words[0]}] {word_idx}</DisplayString>
+        <Expand>
+         <ArrayItems>
+            <Size>nb_words</Size>  
+            <ValuePointer>word_idx[idx[0]]</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+      -->
+    </Expand>  
+   </Type>
+   
    
 </AutoVisualizer>
