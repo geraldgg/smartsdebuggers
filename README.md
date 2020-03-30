@@ -1,6 +1,10 @@
 # SmartsDebuggers
 
-Documentation
+++ Usage
+
+Clone this repository in C:\Users\<username>\Documents\Visual Studio 2017\Visualizers
+
+++ Documentation
 
 https://imagewatch.azurewebsites.net/ImageWatchHelp/ImageWatchHelp.htm
 
