@@ -4,10 +4,11 @@
 
 Clone this repository in C:\Users\<username>\Documents\Visual Studio 2017\Visualizers
 
-   cd C:\Users\<username>\Documents\Visual Studio 2017
-   
-   git clone https://github.com/geraldgg/smartsdebuggers.git Visualizers
-   
+'''
+cd C:\Users\<username>\Documents\Visual Studio 2017
+git clone https://github.com/geraldgg/smartsdebuggers.git Visualizers
+'''
+
 Then run Visual Studio 2017.
 
 ## Documentation
