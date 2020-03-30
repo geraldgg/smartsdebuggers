@@ -12,7 +12,7 @@
    <Type Name="UtilsImg">
       <AlternativeType Name="UtilsImg*"/>
       <DisplayString>
-         {{{nc} x {nl}, {resol} dpi}} 
+         {{{nc} x {nl}, (x0,y0)=({x0},{y0}), {resol} dpi, [mat={mat}, gmat={gmat}, cmat={cmat}]}}
       </DisplayString>
       <Expand>
         <Synthetic Name="[type]">
@@ -29,8 +29,8 @@
         <Item Name="[width]">nc</Item>
         <Item Name="[height]">nl</Item>
         <Item Name="[data]" Condition='cmat!=0'>cmat</Item>
-		<Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat!=0'>gmat</Item>
-		<Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat==0'>mat</Item>
+		  <Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat!=0'>gmat</Item>
+		  <Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat==0'>mat</Item>
         <Item Name="[stride]">nc</Item>
       </Expand>
    </Type>

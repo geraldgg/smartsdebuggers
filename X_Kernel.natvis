@@ -10,30 +10,62 @@
       </DisplayString>
    </Type>
    
+   <Type Name="UtilsRect">
+      <DisplayString>
+         {{left={left}, top={top}, right={right}, bottom={bottom}  } 
+      </DisplayString>
+   </Type>
+   
    <Type Name="_UtilsSegm_results">
-    <DisplayString>{{ n_opt={n_opt} }}</DisplayString>
+    <DisplayString>{{ n_opt={n_opt}, n_obj={n_obj} }}</DisplayString>
     <Expand>  
-        <Item Name="[size]">n_opt</Item>  
-        <Item Name="[opt_prob]">opt_prob</Item>  
-        <ArrayItems>  
+      <Item Name="n_opt">n_opt</Item>  
+      <Synthetic Name="opt_prob"> <!-- prob is a pointer to an array, of size n_var -->
+        <DisplayString>[{n_opt}] {opt_prob}</DisplayString>
+        <Expand>
+         <ArrayItems>  
             <Size>n_opt</Size>  
             <ValuePointer>opt_prob</ValuePointer>  
-        </ArrayItems>  
-        <Item Name="[obj_nmb]">obj_nmb</Item>  
-        <ArrayItems>  
-            <Size>n_opt</Size>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+      <Item Name="n_obj">n_obj</Item>  
+      <Synthetic Name="obj_nmb"> <!-- prob is a pointer to an array, of size n_var -->
+        <DisplayString>[{n_obj}] {obj_nmb}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_obj</Size>  
             <ValuePointer>obj_nmb</ValuePointer>  
-        </ArrayItems>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+      <Synthetic Name="obj_rect"> <!-- prob is a pointer to an array, of size n_var -->
+        <DisplayString>[{n_obj}] {obj_rect}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_obj</Size>  
+            <ValuePointer>obj_rect</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+      <Synthetic Name="obj_img"> <!-- prob is a pointer to an array, of size n_var -->
+        <DisplayString>[{n_obj}] {obj_img}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_obj</Size>  
+            <ValuePointer>obj_img</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>      
     </Expand>  
    </Type>
    
    <Type Name="UtilsList">
     <DisplayString>{{ n_var={n_var}, score={score}, field={field[0]} }}</DisplayString>
     <Expand>
-      <Item Name="n_var">n_var</Item>  
       <Item Name="score">score</Item>
       <Synthetic Name="field"> <!-- prob is a pointer to an array, of size n_var -->
-        <DisplayString>[{n_var}] {field}</DisplayString>
+        <DisplayString>[n_var={n_var}] {field}</DisplayString>
         <Expand>
          <ArrayItems>  
             <Size>n_var</Size>  
@@ -42,7 +74,7 @@
         </Expand>
       </Synthetic>
       <Synthetic Name="prob"> <!-- prob is a pointer to an array, of size n_var -->
-        <DisplayString>[{n_var}] {prob}</DisplayString>
+        <DisplayString>[n_var={n_var}] {prob}</DisplayString>
         <Expand>
          <ArrayItems>  
             <Size>n_var</Size>
@@ -74,5 +106,42 @@
     </Expand>  
    </Type>
    
+   
+   <Type Name="UtilsPara">
+    <DisplayString>{{ n_textl={n_textl}, prob={prob}, textl={textl[0]} }}</DisplayString>
+    <Expand>
+<!--      <Item Name="n_textl">n_textl</Item>  -->
+      <Item Name="prob">prob</Item>
+      <Synthetic Name="textl"> 
+        <DisplayString>[n_textl={n_textl}] {textl}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_textl</Size>  
+            <ValuePointer>textl</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+      <Item Name="specific">specific</Item>  
+    </Expand>  
+   </Type>
+  
+   <Type Name="UtilsTextl">
+    <DisplayString>{{ text={text}, type={type}, reco_prob={reco_prob} }}</DisplayString>
+    <Expand>
+      <Item Name="type">type</Item>  
+      <Item Name="type_prob">type_prob</Item>
+      <Item Name="text">text</Item>  
+      <Item Name="reco_prob">reco_prob</Item>  
+      <Synthetic Name="textf"> 
+        <DisplayString>[n_textf={n_textf}] {textf}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_textf</Size>  
+            <ValuePointer>textf</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+    </Expand>  
+   </Type>
    
 </AutoVisualizer>
