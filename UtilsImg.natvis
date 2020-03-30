@@ -6,6 +6,8 @@
       <AlternativeType Name="UtilsImg*"/>
       <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
    </Type>
+   
+   <!-- JpH Change -->
 
    <Type Name="UtilsImg">
       <AlternativeType Name="UtilsImg*"/>
