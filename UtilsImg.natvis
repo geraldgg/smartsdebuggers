@@ -29,8 +29,8 @@
         <Item Name="[width]">nc</Item>
         <Item Name="[height]">nl</Item>
         <Item Name="[data]" Condition='cmat!=0'>cmat</Item>
-		  <Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat!=0'>gmat</Item>
-		  <Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat==0'>mat</Item>
+        <Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat!=0'>gmat</Item>
+        <Item Name="[data]" Condition='cmat==0 &amp;&amp; gmat==0'>mat</Item>
         <Item Name="[stride]">nc</Item>
       </Expand>
    </Type>

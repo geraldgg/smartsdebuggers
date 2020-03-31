@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
-   <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" MenuName="Add to Image Watch"/>
+  <Type Name="std::vector&lt;&gt;">
+    <UIVisualizer ServiceId="{5452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
+  </Type>
 
-   <Type Name="std::vector&lt;*&gt;">  
-       <DisplayString>{{ size={_Mylast - _Myfirst} }}</DisplayString>  
-       <Expand>  
-           <Item Name="[size]" ExcludeView="simple">_Mylast - _Myfirst</Item>  
-           <Item Name="[capacity]" ExcludeView="simple">_Myend - _Myfirst</Item>  
-           <ArrayItems>  
-               <Size>_Mylast - _Myfirst</Size>  
-               <ValuePointer>_Myfirst</ValuePointer>  
-           </ArrayItems>  
-       </Expand>  
-   </Type>  
+  <Type Name="std::vector&lt;*&gt;">
+    <Intrinsic Name="size" Expression="_Mypair._Myval2._Mylast - _Mypair._Myval2._Myfirst" />
+    <Intrinsic Name="capacity" Expression="_Mypair._Myval2._Myend - _Mypair._Myval2._Myfirst" />
+    <DisplayString>{{ MySize={size()} }}</DisplayString>
+    <Expand>
+      <Item Name="[capacity]" ExcludeView="simple">capacity()</Item>
+      <Item Name="[allocator]" ExcludeView="simple">_Mypair</Item>
+      <ArrayItems>
+        <Size>size()</Size>
+        <ValuePointer>_Mypair._Myval2._Myfirst</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
 
 </AutoVisualizer>

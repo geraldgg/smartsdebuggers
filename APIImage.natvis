@@ -20,7 +20,7 @@
          <Synthetic Name="[channels]" Condition='m_img._color_depth==2'>
             <DisplayString>RGB</DisplayString>
          </Synthetic>
-			<Item Name="[planes]" Condition='m_img._color_depth==2'>1</Item>
+         <Item Name="[planes]" Condition='m_img._color_depth==2'>1</Item>
          <Item Name="[stride]" Condition='m_img._color_depth==2'>m_img._size_x*3</Item>
 			
          <Item Name="[channels]" Condition='m_img._color_depth!=2'>1</Item>
