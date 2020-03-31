@@ -18,7 +18,7 @@ Then run Visual Studio 2017.
 
 ## Documentation
 
-Natvis XML schema : http://schemas.microsoft.com/vstudio/debugger/natvis/2010
+Natvis XML schema : https://code.visualstudio.com/docs/cpp/natvis
 
 https://imagewatch.azurewebsites.net/ImageWatchHelp/ImageWatchHelp.htm
 
