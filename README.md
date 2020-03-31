@@ -1,5 +1,10 @@
 # SmartsDebuggers
 
+## Requirements
+  - Visual Studio 2017
+  - Image Watch extension : https://marketplace.visualstudio.com/items?itemName=VisualCPPTeam.ImageWatch2017
+  - git
+
 ## Usage
 
 Clone this repository in C:\Users\<username>\Documents\Visual Studio 2017\Visualizers
@@ -12,6 +17,8 @@ git clone https://github.com/geraldgg/smartsdebuggers.git Visualizers
 Then run Visual Studio 2017.
 
 ## Documentation
+
+Natvis XML schema : https://code.visualstudio.com/docs/cpp/natvis
 
 https://imagewatch.azurewebsites.net/ImageWatchHelp/ImageWatchHelp.htm
 
