@@ -3,12 +3,10 @@
    <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" MenuName="Add to Image Watch"/>
 
    <Type Name="UtilsImg">
-      <AlternativeType Name="UtilsImg*"/>
       <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" />
    </Type>
    
    <Type Name="UtilsImg">
-      <AlternativeType Name="UtilsImg*"/>
       <DisplayString>
          {{{nc} x {nl}, (x0,y0)=({x0},{y0}), {resol} dpi, [mat={mat}, gmat={gmat}, cmat={cmat}]}}
       </DisplayString>

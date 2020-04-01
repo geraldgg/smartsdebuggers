@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
-   <UIVisualizer ServiceId="{A452AFEA-3DF6-46BB-9177-C0B08F318025}" Id="1" MenuName="Add to Image Watch"/>
-
    
    <Type Name="ProjectDocInfo">
       <AlternativeType Name="ProjectDocInfo*"/>
@@ -60,8 +58,25 @@
     </Expand>  
    </Type>
    
+   <Type Name="DocRec_read_text_from_img_results">
+    <DisplayString>{{ n_txt_lines={n_txt_lines}, v_txt_arr={v_txt_arr} }}</DisplayString>
+    <Expand>  
+      <Item Name="prep_img">prep_img</Item>  
+      <Synthetic Name="v_txt_arr"> <!-- prob is a pointer to an array, of size n_var -->
+        <DisplayString>[{n_txt_lines}] {v_txt_arr}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_txt_lines</Size>  
+            <ValuePointer>v_txt_arr</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+    </Expand>  
+   </Type>
+   
+   
    <Type Name="UtilsList">
-    <DisplayString>{{ n_var={n_var}, score={score}, field={field[0]} }}</DisplayString>
+    <DisplayString>{{field={field[0]}, score={score}, n_var={n_var}  }}</DisplayString>
     <Expand>
       <Item Name="score">score</Item>
       <Synthetic Name="field"> <!-- prob is a pointer to an array, of size n_var -->
@@ -142,6 +157,65 @@
         </Expand>
       </Synthetic>
     </Expand>  
+   </Type>
+   
+   <Type Name="Utils_Text_results">
+      <DisplayString>{{ n_wrd={n_wrd}, wrd={wrd[0].list} }}</DisplayString>
+      <Expand>
+         <Item Name="img">img</Item>  
+         <Synthetic Name="wrd"> 
+           <DisplayString>[n_wrd={n_wrd}] {wrd[0].list}</DisplayString>
+           <Expand>
+            <ArrayItems>  
+               <Size>n_wrd</Size>  
+               <ValuePointer>wrd</ValuePointer>  
+            </ArrayItems>  
+           </Expand>
+         </Synthetic>
+         <Synthetic Name="line"> 
+           <DisplayString>[n_lines={n_lines}] {line}</DisplayString>
+           <Expand>
+            <ArrayItems>  
+               <Size>n_lines</Size>  
+               <ValuePointer>line</ValuePointer>  
+            </ArrayItems>  
+           </Expand>
+         </Synthetic>
+       </Expand>  
+   </Type>
+   
+   <Type Name="UtilsTxtRec_results">
+    <DisplayString>{{ n_wrd={n_wrd}, v_fld={v_fld[0]->list[0].field} }}</DisplayString>
+    <Expand>
+      <Item Name="n_wrd">n_wrd</Item>  
+      <Item Name="v_obj">v_obj</Item>
+      <Item Name="v_segl">v_segl</Item>  
+      <Item Name="v_out">v_out</Item>  
+      <Synthetic Name="v_fld"> 
+        <DisplayString>[n_wrd={n_wrd}] {v_fld[0]->list}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_wrd</Size>  
+            <ValuePointer>v_fld</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+    </Expand>  
+   </Type>
+   
+   <Type Name="Utils_Word_results">
+    <DisplayString>{{ list={list} }}</DisplayString>
+    <Expand>
+      <Item Name="extr_img">extr_img</Item>  
+      <Item Name="loc_zone">loc_zone</Item>
+      <Item Name="line_idx">line_idx</Item>  
+      <Item Name="word_idx">word_idx</Item>  
+      <Item Name="list">list</Item>  
+    </Expand>  
+   </Type>
+   
+   <Type Name="_ProjectDeciFld">
+    <DisplayString>{{ final_list={final_list} }}</DisplayString>
    </Type>
    
 </AutoVisualizer>

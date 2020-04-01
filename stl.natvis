@@ -4,7 +4,7 @@
   <Type Name="std::vector&lt;*&gt;">
     <Intrinsic Name="size" Expression="_Mypair._Myval2._Mylast - _Mypair._Myval2._Myfirst" />
     <Intrinsic Name="capacity" Expression="_Mypair._Myval2._Myend - _Mypair._Myval2._Myfirst" />
-    <DisplayString>{{ MySize={size()} }}</DisplayString>
+    <DisplayString>{{ size={size()}, [0]={_Mypair._Myval2._Myfirst[0]} }}</DisplayString>
     <Expand>
       <Item Name="[capacity]" ExcludeView="simple">capacity()</Item>
       <Item Name="[allocator]" ExcludeView="simple">_Mypair</Item>
