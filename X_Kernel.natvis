@@ -217,5 +217,23 @@
    <Type Name="_ProjectDeciFld">
     <DisplayString>{{ final_list={final_list} }}</DisplayString>
    </Type>
+      
+   <Type Name="Utils_dict">
+    <DisplayString>{{ name={name}, wrd={wrd} }}</DisplayString>
+    <Expand>
+      <Item Name="name">name</Item>  
+      <Synthetic Name="wrd"> 
+        <DisplayString>[n_wrd={n_wrd}] {wrd}</DisplayString>
+        <Expand>
+         <ArrayItems>  
+            <Size>n_wrd</Size>  
+            <ValuePointer>wrd</ValuePointer>  
+         </ArrayItems>  
+        </Expand>
+      </Synthetic>
+      <Item Name="prob">prob</Item> 
+      <Item Name="prob_sum">prob_sum</Item> 
+    </Expand>  
+   </Type>
    
 </AutoVisualizer>
